@@ -1,24 +1,131 @@
-# Compiled class file
-*.class
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pressure Washing Services</title>
 
-# Log file
-*.log
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
 
-# BlueJ files
-*.ctxt
+/* HERO */
+.hero {
+    background: #1e1e1e;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+.hero h1 {
+    font-size: 42px;
+}
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+.btn {
+    background: #00c853;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+/* SECTIONS */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.card {
+    background: white;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 250px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Pressure Washing Services</h1>
+    <p>Driveways • Houses • Decks • Commercial</p>
+    <button class="btn" onclick="openPopup()">Get Free Quote</button>
+</div>
+
+<!-- SERVICES -->
+<section>
+    <h2>Our Services</h2>
+
+    <div class="card">
+        <h3>Driveways</h3>
+        <p>Clean oil, dirt, and stains.</p>
+    </div>
+
+    <div class="card">
+        <h3>Houses</h3>
+        <p>Soft wash exterior cleaning.</p>
+    </div>
+
+    <div class="card">
+        <h3>Decks</h3>
+        <p>Restore wood surfaces.</p>
+    </div>
+</section>
+
+<!-- POPUP -->
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+<div class="popup" id="popup">
+    <h2>Get a Free Quote</h2>
+    <p>Call us now:</p>
+    <h3>123-456-7890</h3>
+    <button class="btn" onclick="closePopup()">Close</button>
+</div>
+
+<script>
+function openPopup() {
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>
